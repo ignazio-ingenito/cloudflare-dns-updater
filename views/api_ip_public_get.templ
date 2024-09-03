@@ -1,0 +1,14 @@
+package views
+import "dnsupdater/models"
+
+templ Api_ip_public_get(rows []models.PublicIpLog) {
+    for i, row := range rows {
+        if i == 0 {
+            <div class="border-y whitespace-nowrap text-right border-neutral-50/15 px-1 py-[0.1rem]">{row.Ip}</div>
+            <div class="border-y whitespace-nowrap text-right border-neutral-50/15 px-1 py-[0.1rem]">{row.CreatedAt.Format("2-Jan 15:04")}</div>
+        } else {
+            <div class="border-b whitespace-nowrap text-right border-neutral-50/15 px-1 py-[0.1rem]">{row.Ip}</div>
+            <div class="border-b whitespace-nowrap text-right border-neutral-50/15 px-1 py-[0.1rem]">{row.CreatedAt.Format("2-Jan 15:04")}</div>
+        }
+    }
+}
